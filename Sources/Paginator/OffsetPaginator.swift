@@ -40,17 +40,17 @@ public enum OffsetMetadataError: Error {
 }
 
 public struct OffsetMetadata: Codable {
-    struct Links: Codable {
-        let previous: String?
-        let next: String?
+    public struct Links: Codable {
+        public let previous: String?
+        public let next: String?
     }
 
-    internal let url: URL
+    public let url: URL
     public let currentPage: Int
     public let perPage: Int
     public let total: Int
     public let totalPages: Int
-    let links: Links
+    public let links: Links
 
     public init(parameters: OffsetParameters, total: Int, url: URL) throws {
         self.url = url
